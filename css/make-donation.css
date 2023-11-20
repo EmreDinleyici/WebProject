@@ -1,0 +1,362 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* kutu genişlikleri 12 sütun 100/12 = 8.33% her kutu*/
+.col-1{width: 8.33%;}
+.col-2{width: 16.66%;}
+.col-3{width: 25%;}
+.col-4{width: 33.33%;}
+.col-5{width: 41.66%;}
+.col-6{width: 50%;}
+.col-7{width: 58.33%;}
+.col-8{width: 66.66%;}
+.col-9{width: 75%;}
+.col-10{width: 83.33%;}
+.col-11{width: 91.66%;}
+.col-12{width: 100%;}
+
+/* .col ile başlayan bütün classlara uygulama yan yana gelmeleri için */
+[class*="col-"]{
+    float: left;
+    padding: 15px;
+    /* border: 1px solid red; */
+}
+
+/* row classı uygulanmış satırın hemen sonrasını seç demek satırların yan yana gelmesini engellemek için*/
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media only screen and (max-width: 768px){
+    [class*="col-"]{width: 100%;}
+}
+
+html {
+    font-family: "Lucida Sans", sans-serif;
+    background-color: #ececec;
+}
+
+.reset{
+    padding: 0px;
+}
+
+
+*::selection{
+    background-color: #292828;
+    color: white;
+    text-shadow: 0 0 2px black, 0 0 4px white;
+}
+
+a{cursor: pointer;}
+
+
+/* nav codes */
+
+nav{
+    position: sticky;
+    top: 0px;
+    background-color: #2f2d39;
+    min-height: 30px;
+    z-index: 2;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+
+nav ul li a {
+    display: inline-block;
+    color: #ececec;
+    text-align: center;
+    padding: 16px;
+    font-size: 20px;
+    text-decoration: none;
+    width: 180px;
+    letter-spacing: 4px;
+}
+
+.log{
+    float: right;
+    background: transparent;
+    border: 0;
+    margin-left: 20px;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ececec;
+}
+
+nav ul li a:hover, .dropdown:hover .dropbtn, .log:hover {
+    text-decoration: underline;
+    transition: 0.4s ease-in;
+    color: #f1f1f1;
+    background-color: rgb(114, 114, 114);
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 270px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    width: 270px;
+}
+
+.dropdown-content a:hover {
+    background-color: grey;
+    transition: 0.5s;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+/* donation form main*/
+
+main{
+    background-image: url("../images/donate-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    font-size: 50px;
+    margin: 10px;
+    font-weight: bolder;
+    font-variant: small-caps;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-image: linear-gradient(to left, red, orange, yellow, purple);
+}
+
+.donate-form {
+    padding: 20px;
+    background-color: #e9e9f1;
+    border: 1px solid #bebed6;
+    width: 600px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 40px gray;
+    font-size: 18px;
+}
+
+  
+.donate-form input::placeholder, .donate-form textarea::placeholder, .donate-form select::placeholder {
+    opacity: 0.8;
+}
+
+.donate-form textarea {
+    width: 100%;
+    height: 120px;
+    resize: none;
+    padding: 10px;
+}
+
+.donate-form .input-wrap {
+    padding: 10px 0;
+}
+
+.donate-form .input {
+    background-color: #fff;
+    border: 1px solid #bebed6;
+    width: 100%;
+    height: 48px;
+    padding: 10px 15px;
+}
+
+
+.donate-form label.f-title {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+
+.donate-form input[type="file"] {
+    padding-left: 10px;
+    color: red;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.donate-form input[type="submit"] {
+    color: #fff;
+    border-color: transparent;
+    background-color: #e21346;
+    font-weight: 600;
+    font-size: 25px;
+    padding: 8px 15px;
+    transition: 0.5s ease all;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#file{
+    color: black;
+    font-weight: 600;
+    font-size: 25px;
+    padding: 8px 15px;
+    width: 100%;
+    margin-top: 10px;
+}
+.donate-form input:focus, textarea:focus{
+    background-color: rgb(195, 192, 192);
+}
+
+.donate-form input[type="submit"]:hover {
+    background-color: #c00d3a;
+    cursor: pointer;
+}
+
+#deliver{
+    margin-left: 30px;
+}
+
+
+input, textarea{
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+/* footer codes #34323e*/
+footer{
+    background-color: #242329;
+    color: #f1f1f1;
+    width: 100%;
+}
+
+.footer-container{
+    text-align: center;
+    padding: 10px 100px;
+}
+
+.logo-footer{
+    width: 20%;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 25px;
+}
+
+footer .upper-p{
+    font-size: 25px;
+    padding-top: 20px;
+    margin-bottom: 15px;
+    color: #f1f1f1;
+}
+
+footer p{
+    margin-bottom: 15px;
+}
+
+
+.icons{
+    color: #f1f1f1;
+    font-size: 25px;
+    padding: 5px;
+}
+
+
+.instagram:hover{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-radius: 20%;
+    transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transition: 0.4s;
+    color: #f1f1f1;
+}
+
+.twitter:hover{
+    color: #55ACEE;
+    transition: 0.4s;
+}
+
+.facebook:hover{
+    color: #3B5998;
+    transition: 0.4s;
+}
+
+.youtube:hover{
+    color: #bb0000;
+    transition: 0.4s;
+}
+
+
+footer a{
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: red;
+    transition: 0.4s;
+}
+
+.abutton{
+    display: inline-block;
+    padding: 10px;
+    margin-left: 3%;
+    background-color: rgb(62, 62, 62);
+    border-radius: 15px;
+    width: 120px;
+    transition: 0.4s;
+}
+
+.footer-button{
+    padding-left: 10%;
+}
+
+.abutton:hover{
+    color: red;
+    box-shadow: 0 0 5px whitesmoke;
+    transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+}

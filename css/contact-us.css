@@ -1,0 +1,344 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* kutu genişlikleri 12 sütun 100/12 = 8.33% her kutu*/
+.col-1{width: 8.33%;}
+.col-2{width: 16.66%;}
+.col-3{width: 25%;}
+.col-4{width: 33.33%;}
+.col-5{width: 41.66%;}
+.col-6{width: 50%;}
+.col-7{width: 58.33%;}
+.col-8{width: 66.66%;}
+.col-9{width: 75%;}
+.col-10{width: 83.33%;}
+.col-11{width: 91.66%;}
+.col-12{width: 100%;}
+
+/* .col ile başlayan bütün classlara uygulama yan yana gelmeleri için */
+[class*="col-"]{
+    float: left;
+    padding: 15px;
+}
+
+/* row classı uygulanmış satırın hemen sonrasını seç demek satırların yan yana gelmesini engellemek için*/
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media only screen and (max-width: 768px){
+    [class*="col-"]{width: 100%;}
+}
+
+html {
+    font-family: "Lucida Sans", sans-serif;
+    background-color: #ececec;
+}
+
+.reset{
+    padding: 0;
+}
+
+
+a{
+    color: #ececec;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* nav codes */
+
+nav{
+    position: sticky;
+    top: 0px;
+    background-color: #2f2d39;
+    min-height: 30px;
+    z-index: 2;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+
+nav ul li a {
+    display: inline-block;
+    color: #ececec;
+    text-align: center;
+    padding: 16px;
+    font-size: 20px;
+    text-decoration: none;
+    width: 180px;
+    letter-spacing: 4px;
+}
+
+.log{
+    float: right;
+    background: transparent;
+    border: 0;
+    margin-left: 20px;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ececec;
+}
+
+nav ul li a:hover, .dropdown:hover .dropbtn, .log:hover {
+    text-decoration: underline;
+    transition: 0.4s ease-in;
+    color: #f1f1f1;
+    background-color: rgb(114, 114, 114);
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 270px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    width: 270px;
+}
+
+.dropdown-content a:hover {
+    background-color: grey;
+    transition: 0.5s;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+
+/* first-section codes */
+
+#first-section{
+    background-color: #005153;
+    width: 100%;
+    min-height: 500px;
+    padding: 40px;
+}
+
+
+#first-section h1, #first-section h2{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 1px black;
+    letter-spacing: 5px;
+}
+
+#first-section h2{
+    margin-bottom: 15px;
+
+}
+
+.container{
+    text-align: center;
+}
+
+
+.icon{
+    display: inline-block;
+    font-size: 40px;
+    color: white;
+    background-color: #7f6a6a;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    line-height: 60px;
+    margin-bottom: 5px;
+}
+
+#first-section p{
+    margin-bottom: 15px;
+    color: black;
+    font-weight: 500;
+}
+
+#first-section address p{
+    color: #ececec;
+}
+
+
+.icons{
+    margin-right: 10px;
+    font-size: 2rem;
+    color: #ececec;
+}
+
+.instagram:hover{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-radius: 20%;
+    transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transition: 0.4s;
+    color: #f1f1f1;
+}
+
+.twitter:hover, .mail:hover{
+    color: rgb(46, 105, 255);
+    transition: 0.4s;
+}
+
+.facebook:hover{
+    color: rgb(46, 46, 255);
+    transition: 0.4s;
+}
+
+.youtube:hover, .location:hover{
+    color: red;
+    transition: 0.4s;
+}
+
+.phone:hover{
+    color: rgb(4, 88, 4);
+    transition: 0.4s;
+}
+
+
+
+
+/* second-section codes */
+
+#second-section h3{
+    font-size: 36px;
+    color: rgb(52, 52, 192);
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 1px white, 1px 1px 2px black;
+    letter-spacing: 5px;
+}
+
+#second-section form {
+    min-height: 400px;
+    width: 100%;
+    background-color: rgba(82, 76, 76, 0.13);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+}
+
+#second-section label {
+    display: block;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+#second-section input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 20px;
+}
+
+#second-section input:focus, #second-section textarea:focus{
+    background-color: rgba(64, 62, 62, 0.17);
+}
+
+textarea{
+    resize: none;
+    display: block;
+    height: 150px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 20px;
+}
+
+#second-section input[type="submit"], #second-section input[type="reset"]{
+    margin-right: 20px;
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.07);
+    color: black;
+}
+
+#second-section input[type="submit"]:hover, #second-section input[type="reset"]:hover{
+    background-color: rgba(64, 62, 62, 0.17);
+}
+
+#second-section p{
+    text-indent: 15px;
+    text-align: justify;
+    margin-bottom: 30px;
+    line-height: 25px;
+}
+
+.section-pic{
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+}
+
+
+
+
+/* footer codes */
+
+footer{
+    background-color: #242329;
+    color: #f1f1f1;
+    width: 100%;
+    min-height: 80px;
+}
+
+footer h3{
+    font-size: 28px;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 2px solid white;
+}
